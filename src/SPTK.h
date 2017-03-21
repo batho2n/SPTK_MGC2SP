@@ -48,7 +48,13 @@
    Speech Signal Processing Toolkit
    SPTK.h
 ***********************************************************/
+#ifndef _SPTK_H                      // 고절가주팁 #1
+#define _SPTK_H
 
+#ifdef __cplusplus                       // 고절가주팁 #2
+extern "C" {
+#endif
+	
 #ifndef PI
 #define PI  3.14159265358979323846
 #endif                          /* PI */
@@ -378,3 +384,10 @@ void free_wav_list(Filelist * filelist);
 void free_wav_data(Wavfile * wavfile);
 void wavjoin(Wavfile * wavout, const Wavfile * wavin);
 int search_wav_list(Filelist * filelist, char *key);
+
+
+#ifdef __cplusplus
+}
+#endif
+#endif
+
